@@ -1,0 +1,16 @@
+server:
+  port: 10010
+
+spring:
+  cloud:
+    nacos:
+      server-addr: nacos:8848
+    gateway:
+      routes:
+        - id: book-service
+          uri: lb://bookservice
+          predicates:
+            - Path=/books/**
+            -
+    application:
+      name: api-gateway

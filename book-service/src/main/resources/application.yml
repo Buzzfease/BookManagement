@@ -1,0 +1,18 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:mysql://mysql:3306/books?useSSL=false
+    username: root
+    password: 1234
+    driver-class-name: com.sql.jdbc.driver
+
+mybatis:
+  type-aliases-package: com.buzz.book.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.buzz: debug
