@@ -3,16 +3,9 @@ server:
 
 spring:
   cloud:
-    nacos:
-      discovery:
-        server-addr: nacos:8848
-      config:
-        file-extension: yaml
     gateway:
       routes:
         - id: book-service
           uri: lb://bookservice
           predicates:
             - Path=/books/**
-  application:
-    name: api-gateway
