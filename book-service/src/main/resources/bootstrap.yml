@@ -1,11 +1,9 @@
 spring:
   application:
     name: bookservice
-  profiles:
-    active: dev
 
   cloud:
     nacos:
-      server-addr: nacos:8848
+      server-addr: localhost:8848
       config:
         file-extension: yaml

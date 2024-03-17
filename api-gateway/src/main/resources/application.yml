@@ -4,7 +4,7 @@ server:
 spring:
   cloud:
     nacos:
-      server-addr: nacos:8848
+      server-addr: localhost:8848
     gateway:
       routes:
         - id: book-service
@@ -12,5 +12,5 @@ spring:
           predicates:
             - Path=/books/**
             -
-    application:
-      name: api-gateway
+  application:
+    name: api-gateway

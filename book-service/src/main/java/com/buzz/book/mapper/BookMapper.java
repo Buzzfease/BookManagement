@@ -15,6 +15,7 @@ public interface BookMapper {
     Book getBookById(@Param("id") Long id);
 
     @Insert("insert into tb_book(name, author, publishYear, isbn) values(#{name}, #{author}, #{publishYear}, #{isbn})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     void insertBook(Book book);
 
     @Update("update tb_book set name=#{name}, author=#{author}, publishYear=#{publishYear}, isbn=#{isbn} where id=#{id}")
