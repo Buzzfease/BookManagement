@@ -16,26 +16,26 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> getAll() {
-        return null;
+        return bookMapper.getAll();
     }
 
     @Override
     public Book getBookById(Long id) {
-        return null;
+        return bookMapper.getBookById(id);
     }
 
     @Override
     public void insertBook(Book book) {
-
+        bookMapper.insertBook(book);
     }
 
     @Override
     public void updateBook(Book book) {
-
+        bookMapper.updateBook(book);
     }
 
     @Override
     public void deleteBook(Long id) {
-
+        bookMapper.deleteBook(id);
     }
 }
