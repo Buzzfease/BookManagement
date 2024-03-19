@@ -2,7 +2,6 @@ package com.buzz.book.controller;
 
 import com.buzz.book.pojo.Book;
 import com.buzz.book.service.BookService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +20,8 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public Book getBookById(@Param("id") Long id) {
-        return bookService.getBookById(id);
+    public Book getBookById(@PathVariable("id") String id) {
+        return bookService.getBookById(Long.valueOf(id));
     }
 
     @PostMapping("/insert")
@@ -36,7 +35,7 @@ public class BookController {
     }
 
     @GetMapping("/delete/{id}")
-    void deleteBook(@Param("id") Long id) {
-        bookService.deleteBook(id);
+    void deleteBook(@PathVariable("id") String id) {
+        bookService.deleteBook(Long.valueOf(id));
     }
 }
